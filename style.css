@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+body {
+  font-family: "Montserrat";
+}
+
+.header-inner-div {
+  padding-bottom: 10rem !important;
+}
+
+#randomUserDisplaySection {
+  margin-top: -12rem;
+}
+
+.user-rounded-image {
+  border-radius: 100%;
+  margin-bottom: -4rem;
+  border: 4px solid gainsboro;
+}
+
+#displayUserInfo {
+  vertical-align: middle;
+}
+
+.clipboard-icon {
+  cursor: pointer; /* Change cursor to indicate it's clickable */
+}
+th,
+td {
+  font-size: 12px;
+}
+td i {
+  font-size: 12px;
+}
+
+.fa-solid.fa-location-dot.fs-4.text-muted {
+  font-size: 10px;
+}
+
+/* Custom CSS for mobile view */
+@media (max-width: 520px) {
+  .table.table-bordered {
+    width: 400px;
+  }
+}

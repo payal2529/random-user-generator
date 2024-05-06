@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random User Generator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body onload="fetchUserData()">
+    <header class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row pb-5">
+          <div class="header-inner-div col-md-12 text-center pb-5">
+            <h2 class="fs-1 fw-normal text-uppercase">Random User Generator</h2>
+            <p class="fw-lighter">
+              Random user generator is a practice project made by random user
+              api and bootstrap 5. By this website you can<br />
+              generate a random person info and use anywhere.
+            </p>
+            <button
+              type="button"
+              class="btn btn-primary py-3 px-5 rounded-2 fw-semibold"
+              onclick="fetchUserData()"
+            >
+              Generate New User
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container mb-5">
+        <div class="row justify-content-center">
+          <div class="col-md-2 d-md-none d-lg-block"></div>
+          <div class="col-md-8" id="randomUserDisplaySection">
+            <div class="card text-center shadow-lg">
+              <div class="card-header pt-5 shadow-sm">
+                <img
+                  src=""
+                  class="user-rounded-image img-fluid"
+                  id="displayUserPhoto"
+                />
+              </div>
+              <!-- card section is start HEre -->
+              <div class="card-body mb-4 mt-5">
+                <h3 class="card-title pt-2 fs-2" id="displayUserName"></h3>
+                <div class="table-responsive">
+                  <table class="table table-bordered mt-4">
+                    <tbody class="text-start" id="displayUserInfo">
+                      <!-- first row satart here -->
+                      <tr class="">
+                        <td class="col-1 text-center">
+                          <i class="fa-solid fa-user fs-4 text-muted"></i>
+                        </td>
+                        <th scope="col-2">First Name:</th>
+                        <td class="col-6">
+                          <span id="displayUserFirstName"></span>
+                          <button
+                            type="button"
+                            class="copyUserFirstName btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserFirstNameBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserFirstNameBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+
+                      <tr class="">
+                        <td class="col-1 text-center">
+                          <i class="fa-solid fa-user fs-4 text-muted"></i>
+                        </td>
+                        <th scope="col-2">Last Name:</th>
+                        <td class="col-6">
+                          <span id="displayUserLastName"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserLastNameBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserLastNameBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+                      <tr class="">
+                        <td class="col-1 text-center">
+                          <i class="fa-solid fa-user fs-4 text-muted"></i>
+                        </td>
+                        <th scope="col-2">Full Name:</th>
+                        <td class="col-6">
+                          <span id="displayUserFullName"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserFullNameBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserFullNameBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+
+                      <tr class="">
+                        <td class="col-1 text-center">
+                          <i class="fa-solid fa-user fs-4 text-muted"></i>
+                        </td>
+                        <th scope="col-2">User Id:</th>
+                        <td class="col-6">
+                          <span id="displayUserId"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserIdBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserIdBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+
+                      <tr class="">
+                        <td class="col-1 text-center">
+                          <!-- <i class="fa-solid fa-user fs-4 text-muted"></i> -->
+                          <i class="fa-solid fa-key fs-4 text-muted"></i>
+                        </td>
+                        <th scope="col-2">Password:</th>
+                        <td class="col-6">
+                          <span id="displayUserPassword"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserPasswordBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserPasswordBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="col-1 text-center">
+                          <i class="fa-solid fa-envelope fs-4 text-muted"></i>
+                        </td>
+                        <th scope="col-2">Email Address:</th>
+                        <td class="col-6">
+                          <span id="displayUserEmail"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserEmailBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserEmailBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="col-1 text-center">
+                          <i class="fa-solid fa-phone fs-4 text-muted"></i>
+                        </td>
+                        <th scope="col-2">Phone Number:</th>
+                        <td class="col-6">
+                          <span id="displayUserPhoneNumber"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserPhoneNumberBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserPhoneNumberBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="col-1 text-center">
+                          <i class="fa-solid fa-user fs-4 text-muted"></i>
+                        </td>
+                        <th scope="col-2">Gender:</th>
+                        <td class="col-6 text-capitalize">
+                          <span id="displayUserGender"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserGenderBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserGenderBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="col-1 text-center">
+                          <i class="fa-regular fa-calendar fs-4 text-muted"></i>
+                        </td>
+                        <th scope="col-2">Date of Birth:</th>
+                        <td class="col-6">
+                          <span id="displayUserDob"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserDobBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserDobBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="col-1 text-center">
+                          <i
+                            class="fa-solid fa-location-dot fs-4 text-muted"
+                          ></i>
+                        </td>
+                        <th scope="col-2">City:</th>
+                        <td class="col-6">
+                          <span id="displayUserCity"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserCityBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserCityBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="col-1 text-center">
+                          <i
+                            class="fa-solid fa-location-dot fs-4 text-muted"
+                          ></i>
+                        </td>
+                        <th scope="col-2">State:</th>
+                        <td class="col-6">
+                          <span id="displayUserState"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserStateBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserStateBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="col-1 text-center">
+                          <i
+                            class="fa-solid fa-map-location-dot fs-4 text-muted"
+                          ></i>
+                        </td>
+                        <th scope="col-2">Post Code:</th>
+                        <td class="col-6">
+                          <span id="displayUserPostcode"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserPostcodeBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserPostcodeBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="col-1 text-center">
+                          <i
+                            class="fa-solid fa-location-dot fs-4 text-muted"
+                          ></i>
+                        </td>
+                        <th scope="col-2">Country:</th>
+                        <td class="col-6">
+                          <span id="displayUserCountry"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserCountryBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserCountryBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="col-1 text-center">
+                          <i
+                            class="fa-solid fa-location-dot fs-4 text-muted"
+                          ></i>
+                        </td>
+                        <th scope="col-2">Address:</th>
+                        <td class="col-6">
+                          <span id="displayUserAddress"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserAddressBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserAddressBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="col-1 text-center">
+                          <i
+                            class="fa-solid fa-location-dot fs-4 text-muted"
+                          ></i>
+                        </td>
+                        <th scope="col-2">Latitude:</th>
+                        <td class="col-6">
+                          <span id="displayUserLatitude"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserLatitudeBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserLatitudeBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="col-1 text-center">
+                          <i
+                            class="fa-solid fa-location-dot fs-4 text-muted"
+                          ></i>
+                        </td>
+                        <th scope="col-2">Longitude:</th>
+                        <td class="col-6">
+                          <span id="displayUserLongitude"></span>
+                          <button
+                            type="button"
+                            class="btn text-center position-absolute top-20 end-0 translate-middle-y d-lg-none d-md-none"
+                            id="copyUserLongitudeBtn1"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>
+                          </button>
+                        </td>
+                        <td class="col-2 text-center">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary text-center d-md-block d-none"
+                            id="copyUserLongitudeBtn2"
+                          >
+                            <i class="fa-regular fa-clipboard me-2"></i>Copy
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary py-3 px-5 mt-3 rounded-2 fw-semibold"
+                  onclick="fetchUserData()"
+                >
+                  Generate New User
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 d-md-none d-sm-none d-lg-block"></div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-dark py-5">
+      <p class="text-white text-center mb-0">
+        Copyright @ 2024. All Right Reserved Developed by Payal Porwal
+      </p>
+    </footer>
+
+    <!-- clipboard alert section👇👇  -->
+    <!-- this HTML code creates a toast notification container with a header, 
+   a message indicating that content has been copied to the clipboard, and a close button. 
+   The message content can be dynamically updated.⬇️ -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="copiedToClipboardToast"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header">
+          <strong class="me-auto text-success"
+            ><i class="fa-regular fa-clipboard me-2"></i>Copied to
+            clipboard!</strong
+          >
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div
+          class="toast-body text-secondary fw-normal"
+          id="copiedToClipboardMessage"
+        >
+          <!-- Here will load dynamic toast message... -->>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/cdf319e764.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
