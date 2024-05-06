@@ -64,169 +64,46 @@ function fetchUserData() {
     .catch((error) => console.error("Error fetching data:", error));
 }
 
+// userDataId is using for Referencing user data Element👇
+const applyClickEventListner = (copyButtonId, userDataId) => {
+  document.getElementById(copyButtonId).addEventListener("click", () => {
+    copyUserInfoToClipboard(userDataId);
+  });
+};
+
 // for copying content
-
-// ---for btn 1
-document
-  .getElementById("copyUserFirstNameBtn1")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserFirstName");
-  });
-
-//--- for btn 2
-document
-  .getElementById("copyUserFirstNameBtn2")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserFirstName");
-  });
-
-// for btn 1
-document
-  .getElementById("copyUserLastNameBtn1")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserLastName");
-  });
-//  for btn 2
-document
-  .getElementById("copyUserLastNameBtn2")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserLastName");
-  });
-
-document
-  .getElementById("copyUserFullNameBtn1")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserFullName");
-  });
-
-document
-  .getElementById("copyUserFullNameBtn2")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserFullName");
-  });
-
-document.getElementById("copyUserIdBtn1").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserId");
-});
-
-document.getElementById("copyUserIdBtn2").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserId");
-});
-
-document
-  .getElementById("copyUserPasswordBtn1")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserPassword");
-  });
-
-document
-  .getElementById("copyUserPasswordBtn2")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserPassword");
-  });
-
-document.getElementById("copyUserEmailBtn1").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserEmail");
-});
-
-document.getElementById("copyUserEmailBtn2").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserEmail");
-});
-
-document
-  .getElementById("copyUserPhoneNumberBtn1")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserPhoneNumber");
-  });
-
-document
-  .getElementById("copyUserPhoneNumberBtn2")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserPhoneNumber");
-  });
-
-document.getElementById("copyUserGenderBtn1").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserGender");
-});
-
-document.getElementById("copyUserGenderBtn2").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserGender");
-});
-
-document.getElementById("copyUserDobBtn1").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserDob");
-});
-
-document.getElementById("copyUserDobBtn2").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserDob");
-});
-
-document.getElementById("copyUserCityBtn1").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserCity");
-});
-
-document.getElementById("copyUserCityBtn2").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserCity");
-});
-document.getElementById("copyUserStateBtn1").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserState");
-});
-
-document.getElementById("copyUserStateBtn2").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserState");
-});
-
-document
-  .getElementById("copyUserPostcodeBtn1")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserPostcode");
-  });
-
-document
-  .getElementById("copyUserPostcodeBtn2")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserPostcode");
-  });
-
-document.getElementById("copyUserCountryBtn1").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserCountry");
-});
-
-document.getElementById("copyUserCountryBtn2").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserCountry");
-});
-
-document.getElementById("copyUserAddressBtn1").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserAddress");
-});
-
-document.getElementById("copyUserAddressBtn2").addEventListener("click", () => {
-  copyUserInfoToClipboard("displayUserAddress");
-});
-
-document
-  .getElementById("copyUserLatitudeBtn1")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserLatitude");
-  });
-
-document
-  .getElementById("copyUserLatitudeBtn2")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserLatitude");
-  });
-
-document
-  .getElementById("copyUserLongitudeBtn1")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserLongitude");
-  });
-
-document
-  .getElementById("copyUserLongitudeBtn2")
-  .addEventListener("click", () => {
-    copyUserInfoToClipboard("displayUserLongitude");
-  });
+applyClickEventListner("copyUserFirstNameBtn1", "displayUserFirstName");
+applyClickEventListner("copyUserFirstNameBtn2", "displayUserFirstName");
+applyClickEventListner("copyUserLastNameBtn1", "displayUserLastName");
+applyClickEventListner("copyUserLastNameBtn2", "displayUserLastName");
+applyClickEventListner("copyUserFullNameBtn1", "displayUserFullName");
+applyClickEventListner("copyUserFullNameBtn2", "displayUserFullName");
+applyClickEventListner("copyUserIdBtn1", "displayUserId");
+applyClickEventListner("copyUserIdBtn2", "displayUserId");
+applyClickEventListner("copyUserPasswordBtn1", "displayUserPassword");
+applyClickEventListner("copyUserPasswordBtn2", "displayUserPassword");
+applyClickEventListner("copyUserEmailBtn1", "displayUserEmail");
+applyClickEventListner("copyUserEmailBtn2", "displayUserEmail");
+applyClickEventListner("copyUserPhoneNumberBtn1", "displayUserPhoneNumber");
+applyClickEventListner("copyUserPhoneNumberBtn2", "displayUserPhoneNumber");
+applyClickEventListner("copyUserGenderBtn1", "displayUserGender");
+applyClickEventListner("copyUserGenderBtn2", "displayUserGender");
+applyClickEventListner("copyUserDobBtn1", "displayUserDob");
+applyClickEventListner("copyUserDobBtn2", "displayUserDob");
+applyClickEventListner("copyUserCityBtn1", "displayUserCity");
+applyClickEventListner("copyUserCityBtn2", "displayUserCity");
+applyClickEventListner("copyUserStateBtn1", "displayUserState");
+applyClickEventListner("copyUserStateBtn2", "displayUserState");
+applyClickEventListner("copyUserPostcodeBtn1", "displayUserPostcode");
+applyClickEventListner("copyUserPostcodeBtn2", "displayUserPostcode");
+applyClickEventListner("copyUserCountryBtn1", "displayUserCountry");
+applyClickEventListner("copyUserCountryBtn2", "displayUserCountry");
+applyClickEventListner("copyUserAddressBtn1", "displayUserAddress");
+applyClickEventListner("copyUserAddressBtn2", "displayUserAddress");
+applyClickEventListner("copyUserLatitudeBtn1", "displayUserLatitude");
+applyClickEventListner("copyUserLatitudeBtn2", "displayUserLatitude");
+applyClickEventListner("copyUserLongitudeBtn1", "displayUserLongitude");
+applyClickEventListner("copyUserLongitudeBtn2", "displayUserLongitude");
 
 // this function takes an element id as input, retrieves the HTML content of that element,
 //  copies it to the clipboard, updates a message indicating that the content has been copied,
