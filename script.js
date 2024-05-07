@@ -167,3 +167,18 @@ function showToast() {
   const toast = new bootstrap.Toast(copiedToClipboardToastTrigged);
   toast.show();
 }
+
+// for  header and footer dynamic data
+const dynamicData = {
+  developerName: "Dheeraj Parmar",
+  headerheading: "RANDOM USER GENERATOR",
+};
+
+const developerNameElement = document.getElementById("dynamicDeveloperName");
+developerNameElement.innerHTML = dynamicData.developerName;
+
+const dynamicHeadingElement = document.getElementById("dynamicHeaderHeading");
+dynamicHeadingElement.innerHTML = dynamicData.headerheading;
+
+const dynamicYearElement = document.getElementById("dynamicYear");
+dynamicYearElement.innerHTML = new Date().getFullYear();
