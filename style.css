@@ -42,4 +42,8 @@ td i {
   .table.table-bordered {
     width: 400px;
   }
+
+  .fa-solid.fa-user.fs-4.text-muted {
+    font-size: 3px;
+  }
 }
