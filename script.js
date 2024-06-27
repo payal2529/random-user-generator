@@ -170,7 +170,7 @@ function showToast() {
 
 // for  header and footer dynamic data
 const dynamicData = {
-  developerName: "Dheeraj Parmar",
+  developerName: "Payal Porwal",
   headerheading: "RANDOM USER GENERATOR",
 };
 
