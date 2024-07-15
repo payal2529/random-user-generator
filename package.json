@@ -26,7 +26,7 @@
     "appId": "com.yourname.random-profile-generator",
     "win": {
       "target": "portable",
-      "icon": "build/random-user-icon.ico"
+      "icon": "build/random-user-generator-logo.ico"
     },
     "portable": {
       "unicode": false,
