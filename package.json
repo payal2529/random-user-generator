@@ -1,7 +1,7 @@
 {
-  "name": "random-profile-generator",
+  "name": "random-user-generator",
   "author": "",
-  "productName": "random-profile-generator",
+  "productName": "random-user-generator",
   "version": "1.0.0",
   "description": "Randon user profile generator",
   "main": "main.js",
